@@ -21,8 +21,8 @@ app.use(cors())
 app.use(bodyParser.json())
 
 
-app.use('/api/signup',signupRouter)
+app.use(process.env.REACT_APP_WEB_URL,signupRouter)
 app.use('/api/contact', contactRouter)
 app.use('/api/easy', easyRouter)
 
-app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))
+app.listen(apiPort, () => console.log(`apiServer running on port ${apiPort}`))
