@@ -34,10 +34,7 @@ connectToDB = (env) => {
 
   connectIt();
 
-  mongoose.connection.o# production
-/build
-
-n('error',function(err){
+  mongoose.connection.on('error',function(err){
     console.log("Mongoose error default connection has occurred " + err );
     connectToDB.counter--;
     if(connectToDB.counter > 0)
